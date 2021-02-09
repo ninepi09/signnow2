@@ -30,7 +30,32 @@
   // for test purpose
   onMount(async () => {
     try {
-      const res = await fetch("/test.pdf");
+
+      var currentUrl = window.location.href;
+      console.log("current URL",currentUrl);
+
+      function getURLImagePart(str) {
+          return str.split('!')[1];
+      }
+
+      const urlImgQR = getURLImagePart(currentUrl); // image QRCode
+      console.log("imageQR", urlImgQR); 
+      //url harus HTTPS://
+      const proxyurl = "https://corsanytnde.herokuapp.com/";
+      const heroku = "https://cors-anywhere.herokuapp.com"; 
+      const url = "https://192.168.1.21/tata_naskah/uploaded/sm/sm_15980_1.pdf"; 
+      const uy = "https://yukmarry.com/1.pdf";   
+      //const res = await fetch(proxyurl+pdftnde); // kalo pake cors anywhere
+    
+      const pdfURL = currentUrl.substring(
+          currentUrl.lastIndexOf("?") + 1, 
+          currentUrl.lastIndexOf("!")
+      );
+      console.log("pdfURL",pdfURL); 
+       
+
+      const res = await fetch(pdfURL);
+      // const res = await fetch("/test.pdf");
       const pdfBlob = await res.blob();
       await addPDF(pdfBlob);
       selectedPageIndex = 0;
@@ -75,11 +100,43 @@
     }
   }
   async function onUploadImage(e) {
-    const file = e.target.files[0];
-    if (file && selectedPageIndex >= 0) {
-      addImage(file);
+    console.log("onUploadImage");
+    //const file = e.target.files[0];
+    if (selectedPageIndex >= 0) {
+
+
+      // var currentUrl = window.location.href;
+      // console.log("current URL",currentUrl);
+
+      // function getURLImagePart(str) {
+      //     return str.split('!')[1];
+      // }
+
+      // const urlImgQR = getURLImagePart(currentUrl); // image QRCode
+      // console.log("imageQR onUploadImage", urlImgQR); 
+      // addImage(urlImgQR);
+      var currentUrl = window.location.href;
+      console.log("current URL",currentUrl);
+
+      function getURLImagePart(str) {
+          return str.split('!')[1];
+      }
+
+      const urlImgQR = getURLImagePart(currentUrl); // image QRCode
+      console.log("imageQR", urlImgQR); 
+
+      
+      const proxyurl = "https://corsanytnde.herokuapp.com/";
+      const uk = "https://yukmarry.com/12.png";
+      const imgBlob = await (await fetch(proxyurl+uk)).blob();
+      // const imgBlob = await (await fetch(urlImgQR)).blob();
+      addImage(imgBlob);
+
+      const urlP12 = "http://192.168.1.40/tata_naskah/ajax/img/rizki_mayandi.p12";
+
+      //addImage(file);
     }
-    e.target.value = null;
+    // e.target.value = null;
   }
   async function addImage(file) {
     try {
