@@ -92,7 +92,7 @@ export async function save(pdfFile, objects, name) {
   });
   await Promise.all(pagesProcesses);
   try {
-    const pdfBytes = await pdfDoc.save();
+    // const pdfBytes = await pdfDoc.save();
     download(pdfBytes, name, 'application/pdf');
   } catch (e) {
     console.log('Failed to save PDF.');
