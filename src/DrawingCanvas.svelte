@@ -75,7 +75,7 @@
     </button>
     <button
       on:click={finish}
-      class="w-24 bg-blue-600 hover:bg-blue-700 text-white font-bold py-1 px-4
+      class="w-24 bg-green-600 hover:bg-green-700 text-white font-bold py-1 px-4
       rounded">
       Done
     </button>

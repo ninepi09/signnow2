@@ -239,7 +239,9 @@
     if (!pdfFile || saving || !pages.length) return;
     saving = true;
     try {
-      await save(pdfFile, allObjects, pdfName, pagesScale);
+
+
+      await save(pdfFile, allObjects, "signed"+pdfName, pagesScale);
     } catch (e) {
       console.log(e);
     } finally {
@@ -270,7 +272,7 @@
       class="hidden"
       on:change={onUploadImage} />
     <label
-      class="whitespace-no-wrap bg-blue-500 hover:bg-blue-700 text-white
+      class="whitespace-no-wrap bg-green-500 hover:bg-green-700 text-white
       font-bold py-1 px-3 md:px-4 rounded mr-3 cursor-pointer md:mr-4"
       for="pdf">
       Choose PDF
@@ -314,17 +316,17 @@
     </div>
     <button
       on:click={savePDF}
-      class="w-20 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3
+      class="w-20 bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-3
       md:px-4 mr-3 md:mr-4 rounded"
       class:cursor-not-allowed={pages.length === 0 || saving || !pdfFile}
-      class:bg-blue-700={pages.length === 0 || saving || !pdfFile}>
-      {saving ? 'Saving' : 'Save'}
+      class:bg-green-700={pages.length === 0 || saving || !pdfFile}>
+      {saving ? 'Menyimpan' : 'Simpan'}
     </button>
-    <a href="https://github.com/ShizukuIchi/pdf-editor">
+    <!-- <a href="https://github.com/ShizukuIchi/pdf-editor">
       <img
         src="/GitHub-Mark-32px.png"
         alt="A GitHub icon leads to personal GitHub page" />
-    </a>
+    </a> -->
   </div>
   {#if addingDrawing}
     <div

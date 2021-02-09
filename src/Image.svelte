@@ -114,7 +114,7 @@
     @apply absolute border-dashed border-gray-600;
   }
   .resize-corner {
-    @apply absolute w-10 h-10 bg-blue-300 rounded-full;
+    @apply absolute w-10 h-10 bg-green-300 rounded-full;
   }
 </style>
 
