@@ -23,6 +23,7 @@ export async function save(pdfFile, objects, name) {
         let img;
         try {
           if (file.type === 'image/jpeg') {
+            console.log("embed image")
             img = await pdfDoc.embedJpg(await readAsArrayBuffer(file));
           } else {
             img = await pdfDoc.embedPng(await readAsArrayBuffer(file));
@@ -39,6 +40,7 @@ export async function save(pdfFile, objects, name) {
           return noop;
         }
       } else if (object.type === 'text') {
+        console.log("embed text")
         let { x, y, lines, lineHeight, size, fontFamily, width } = object;
         const height = size * lineHeight * lines.length;
         const font = await fetchFont(fontFamily);
@@ -61,6 +63,7 @@ export async function save(pdfFile, objects, name) {
             y: pageHeight - y - height,
           });
       } else if (object.type === 'drawing') {
+        console.log("embed sign draw")
         let { x, y, path, scale } = object;
         const {
           pushGraphicsState,
@@ -92,7 +95,8 @@ export async function save(pdfFile, objects, name) {
   });
   await Promise.all(pagesProcesses);
   try {
-    // const pdfBytes = await pdfDoc.save();
+    console.log("pdfDoc save")
+    const pdfBytes = await pdfDoc.save();
     download(pdfBytes, name, 'application/pdf');
   } catch (e) {
     console.log('Failed to save PDF.');

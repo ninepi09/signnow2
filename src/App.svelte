@@ -240,7 +240,7 @@
     saving = true;
     try {
 
-
+      console.log("saving")
       await save(pdfFile, allObjects, "signed"+pdfName, pagesScale);
     } catch (e) {
       console.log(e);
