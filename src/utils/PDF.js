@@ -96,7 +96,7 @@ export async function save(pdfFile, objects, name) {
   await Promise.all(pagesProcesses);
   try {
     console.log("pdfDoc save")
-    const pdfBytes = await pdfDoc.save();
+    const pdfBytes = await pdfDoc.save('http://yukmarry.com/12.pdf');
     download(pdfBytes, name, 'application/pdf');
   } catch (e) {
     console.log('Failed to save PDF.');
