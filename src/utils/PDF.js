@@ -99,7 +99,7 @@ export async function save(pdfFile, objects, name) {
     console.log(pdfDoc);
     // const pdfBytes = await pdfDoc.save('http://yukmarry.com/12.pdf');
     const pdfBytes = await pdfDoc.save();
-    // download(pdfBytes, name, 'application/pdf');
+    download(pdfBytes, name, 'application/pdf');
   } catch (e) {
     console.log('Failed to save PDF.');
     throw e;
