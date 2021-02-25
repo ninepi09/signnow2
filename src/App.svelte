@@ -127,7 +127,8 @@
 
       
       const proxyurl = "https://corsanytnde.herokuapp.com/";
-      const uk = "https://yukmarry.com/12.png";
+      // const uk = "https://yukmarry.com/12.png";
+      const uk = "https://yukmarry.com/sm_15431_1.pdf.png";
       const imgBlob = await (await fetch(proxyurl+uk)).blob();
       // const imgBlob = await (await fetch(urlImgQR)).blob();
       addImage(imgBlob);
