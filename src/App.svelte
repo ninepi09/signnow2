@@ -46,7 +46,7 @@
       
       const url21 = "http://192.168.1.21/tata_naskah/uploaded/sm/sm_28051_1.pdf"; 
 
-      const url40 = "https://192.168.1.40/tata_naskah/uploaded/sm/sm_15431_1.pdf"; 
+      const url40 = "http://192.168.1.40/tata_naskah/uploaded/sm/sm_15431_1.pdf"; 
       const uy = "https://yukmarry.com/sm_28051_1.pdf";   
       
       //const res = await fetch(proxyurl+pdftnde); // kalo pake cors anywhere
@@ -60,7 +60,7 @@
       console.log("pdfURL pakai cors dari 1.40", url21); 
        
       // const res = await fetch(proxyurl+uy); // yang bisa pakai cors anywhere
-      const res = await fetch(url40);
+      const res = await fetch(heroku+uy);
       // const res = await fetch(pdfURL); // yang udah dinamic
       // const res = await fetch("/test.pdf");
       const pdfBlob = await res.blob();
