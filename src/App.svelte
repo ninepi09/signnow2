@@ -58,9 +58,10 @@
       console.log("pdfURL",pdfURL); 
       console.log("pdfURL pakai cors dari 1.40 fetch(proxyurl+url40)", url40); 
       console.log("pdfURL pakai cors dari 1.40", url21); 
+      console.log("pdfURL pakai cors dari yukmarry", proxyurl+ uy); 
        
       // const res = await fetch(proxyurl+uy); // yang bisa pakai cors anywhere
-      const res = await fetch(heroku+uy);
+      const res = await fetch(proxyurl+uy);
       // const res = await fetch(pdfURL); // yang udah dinamic
       // const res = await fetch("/test.pdf");
       const pdfBlob = await res.blob();
