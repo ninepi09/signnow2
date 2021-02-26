@@ -44,7 +44,7 @@
       const proxyurl = "https://corsanytnde.herokuapp.com/";
       const heroku = "https://cors-anywhere.herokuapp.com"; 
       const url = "https://192.168.1.21/tata_naskah/uploaded/sm/sm_15980_1.pdf"; 
-      const uy = "https://yukmarry.com/1.pdf";   
+      const uy = "https://yukmarry.com/sm_15431_1.pdf";   
       //const res = await fetch(proxyurl+pdftnde); // kalo pake cors anywhere
     
       const pdfURL = currentUrl.substring(
@@ -52,8 +52,9 @@
           currentUrl.lastIndexOf("!")
       );
       console.log("pdfURL",pdfURL); 
+      console.log("pdfURL",proxyurl+uy); 
        
-      const res = await fetch(proxyurl+uy );
+      const res = await fetch(proxyurl+uy);
       // const res = await fetch(pdfURL); // yang udah dinamic
       // const res = await fetch("/test.pdf");
       const pdfBlob = await res.blob();
