@@ -42,7 +42,7 @@
       console.log("imageQR", urlImgQR); 
       //url harus HTTPS://
       const proxyurl = "https://corsanytnde.herokuapp.com/";
-      const heroku = "https://cors-anywhere.herokuapp.com";  //gagal pake ini
+      const heroku = "https://cors-anywhere.herokuapp.com/";  //gagal pake ini
       
       const url21 = "http://192.168.1.21/tata_naskah/uploaded/sm/sm_28051_1.pdf"; 
 
