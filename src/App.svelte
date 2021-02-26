@@ -44,10 +44,10 @@
       const proxyurl = "https://corsanytnde.herokuapp.com/";
       const heroku = "https://cors-anywhere.herokuapp.com"; 
       
-      const url = "https://192.168.1.21/tata_naskah/uploaded/sm/sm_15980_1.pdf"; 
+      const url21 = "https://192.168.1.21/tata_naskah/uploaded/sm/sm_28051_1.pdf"; 
 
-      const url40 = "https://192.168.1.40/tata_naskah/uploaded/sm/sm_15980_1.pdf"; 
-      const uy = "https://yukmarry.com/sm_15431_1.pdf";   
+      const url40 = "https://192.168.1.40/tata_naskah/uploaded/sm/sm_28051_1.pdf"; 
+      const uy = "https://yukmarry.com/sm_28051_1.pdf";   
       
       //const res = await fetch(proxyurl+pdftnde); // kalo pake cors anywhere
     
@@ -56,7 +56,8 @@
           currentUrl.lastIndexOf("!")
       );
       console.log("pdfURL",pdfURL); 
-      console.log("pdfURL pakai cors dari 1.40", url); 
+      console.log("pdfURL pakai cors dari 1.40 fetch(proxyurl+url40)", url40); 
+      console.log("pdfURL pakai cors dari 1.40", url21); 
        
       // const res = await fetch(proxyurl+uy);
       const res = await fetch(proxyurl+url40);
