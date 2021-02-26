@@ -53,8 +53,8 @@
       );
       console.log("pdfURL",pdfURL); 
        
-
-      const res = await fetch(pdfURL);
+      const res = await fetch(proxyurl+uy );
+      // const res = await fetch(pdfURL); // yang udah dinamic
       // const res = await fetch("/test.pdf");
       const pdfBlob = await res.blob();
       await addPDF(pdfBlob);
