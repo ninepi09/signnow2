@@ -46,7 +46,7 @@
       
       const url21 = "https://192.168.1.21/tata_naskah/uploaded/sm/sm_28051_1.pdf"; 
 
-      const url40 = "https://192.168.1.40/tata_naskah/uploaded/sm/sm_28051_1.pdf"; 
+      const url40 = "https://192.168.1.40/tata_naskah/uploaded/sm/sm_15431_1.pdf"; 
       const uy = "https://yukmarry.com/sm_28051_1.pdf";   
       
       //const res = await fetch(proxyurl+pdftnde); // kalo pake cors anywhere
