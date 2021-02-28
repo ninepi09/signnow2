@@ -55,17 +55,19 @@
           currentUrl.lastIndexOf("?") + 1, 
           currentUrl.lastIndexOf("!")
       );
-      console.log("pdfURL",pdfURL); 
-      console.log("pdfURL pakai cors dari 1.40 fetch(proxyurl+url40)", url40); 
-      console.log("pdfURL pakai cors dari 1.40", url21); 
-      console.log("berhasil di yuk pdfURL pakai proxyurl dari yukmarry", proxyurl+ uy); 
-      console.log("berhasil di yuk pdfURL pakai heroku dari yukmarry", heroku+ uy); 
+      console.log("pdfURL ",pdfURL); 
+      // console.log("pdfURL pakai cors dari 1.40 fetch(proxyurl+url40)", url40); 
+      // console.log("pdfURL pakai cors dari 1.40", url21); 
+      // console.log("berhasil di yuk pdfURL pakai proxyurl dari yukmarry", proxyurl+ uy); 
+      // console.log("berhasil di yuk pdfURL pakai heroku dari yukmarry", heroku+ uy); 
       console.log("berhasil di yuk pdfURL no heroku dari yukmarry", uy); 
       console.log("belum coba di yuk pdfURL no heroku dari 1.40", url40); 
+      console.log("belum coba di yuk pdfURL no heroku dari 1.21", url21); 
+      console.log("last pdfURL ",pdfURL); 
        
       // const res = await fetch(proxyurl+uy); // yang bisa pakai cors anywhere
-      const res = await fetch(url40);
-      // const res = await fetch(uy);
+      // const res = await fetch(url40);
+      const res = await fetch(uy);
       // const res = await fetch(pdfURL); // yang udah dinamic
       // const res = await fetch("/test.pdf");
       const pdfBlob = await res.blob();
