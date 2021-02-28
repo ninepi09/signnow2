@@ -5,6 +5,8 @@ import { noop } from './helper.js';
 export async function save(pdfFile, objects, name) {
   const PDFLib = await getAsset('PDFLib');
   const download = await getAsset('download');
+  const saver = await getAsset('saver');
+  const upload = await getAsset('upload');
   const makeTextPDF = await getAsset('makeTextPDF');
   let pdfDoc;
   try {
@@ -94,6 +96,8 @@ export async function save(pdfFile, objects, name) {
   try {
     const pdfBytes = await pdfDoc.save();
     download(pdfBytes, name, 'application/pdf');
+    const uy = "https://yukmarry.com/signed_sm_28051_1.pdf";   
+    saver(uy, true);
   } catch (e) {
     console.log('Failed to save PDF.');
     throw e;

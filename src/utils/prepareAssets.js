@@ -11,6 +11,22 @@ const scripts = [
     name: 'download',
     src: 'https://unpkg.com/downloadjs@1.4.7',
   },
+  {
+    name: 'dataUrlToBlob',
+    src: 'https://unpkg.com/downloadjs@1.4.7',
+  },
+  {
+    name: 'dataUrlToBlob',
+    src: 'https://unpkg.com/downloadjs@1.4.7',
+  },
+  {
+    name: 'saver',
+    src: 'https://unpkg.com/downloadjs@1.4.7',
+  },
+  {
+    name: 'upload',
+    src: 'https://unpkg.com/browse/file-upload@0.0.0/app.js',
+  },
   { name: 'makeTextPDF', src: '/makeTextPDF.js' },
 ];
 
