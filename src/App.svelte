@@ -141,8 +141,9 @@
 
       
       const proxyurl = "https://corsanytnde.herokuapp.com/";
+       //logo
       // const uk = "https://yukmarry.com/12.png";
-      const uk = "https://yukmarry.com/sm_15431_1.pdf.png";
+      const uk = "https://yukmarry.com/sm_15431_1.pdf.png";  //logo
       const imgBlob = await (await fetch(proxyurl+uk)).blob();
       // const imgBlob = await (await fetch(urlImgQR)).blob();
       addImage(imgBlob);
@@ -258,7 +259,8 @@
 
       
       console.log("saving")
-      await save(pdfFile, allObjects, "signed"+pdfName, pagesScale);
+      // await save(pdfFile, allObjects, "signed"+pdfName, pagesScale);
+      await save(pdfFile, allObjects, pdfName, pagesScale);
     } catch (e) {
       console.log(e);
     } finally {
