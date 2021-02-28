@@ -4,7 +4,7 @@ import { noop } from './helper.js';
 
 export async function save(pdfFile, objects, name) {
   const PDFLib = await getAsset('PDFLib');
-  const download = await getAsset('download2');
+  const download = await getAsset('download');
   const makeTextPDF = await getAsset('makeTextPDF');
   let pdfDoc;
   try {
