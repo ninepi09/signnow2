@@ -1,0 +1,32 @@
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+
+
+</IfModule>
+
+<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+    <IfModule mod_headers.c>
+        SetEnvIf Origin "http(s)?://(www\.)?(google.com|staging.google.com|development.google.com|cors-anywhere.herokuapp.com/|signnow2.netlify.app/)$" AccessControlAllowOrigin=$0
+        Header add Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+        Header merge Vary Origin
+    </IfModule>
+</FilesMatch>
+
+<IfModule mod_headers.c>
+# Header Set Access-Control-Allow-Origin "https://your.external.resource.tld"
+    # Header Set Access-Control-Allow-Origin "http://socialengine.ipragmatech.com"
+    # Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Origin "https://signnow2.netlify.com"
+    Header set Access-Control-Allow-Origin "https://signnow2.netlify.app"
+    Header set Access-Control-Allow-Methods "GET,PUT,POST,DELETE"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
+# END WordPress
