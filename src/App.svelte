@@ -257,7 +257,8 @@
     try {
 
 
-      console.log("saving");
+      console.log("saving ...");
+      console.log("pdfName : ", pdfName);
       console.log("pdfName : ","signed_"+pdfName);
       await save(pdfFile, allObjects, "signed_"+pdfName, pagesScale);
     } catch (e) {
