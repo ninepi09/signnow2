@@ -8,7 +8,7 @@ const scripts = [
     src: 'https://unpkg.com/pdf-lib@1.4.0/dist/pdf-lib.min.js',
   },
   {
-    name: 'download',
+    name: 'download2',
     src: 'https://unpkg.com/downloadjs@1.4.7',
   },
   { name: 'makeTextPDF', src: '/makeTextPDF.js' },

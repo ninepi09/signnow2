@@ -287,7 +287,7 @@
       class="whitespace-no-wrap bg-green-500 hover:bg-green-700 text-white
       font-bold py-1 px-3 md:px-4 rounded mr-3 cursor-pointer md:mr-4"
       for="pdf">
-      Pilih PDF
+      Pilih PDF 2s
     </label>
     <div
       class="relative mr-3 flex h-8 bg-gray-400 rounded-sm overflow-hidden

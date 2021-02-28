@@ -4,11 +4,13 @@ import { noop } from './helper.js';
 
 export async function save(pdfFile, objects, name) {
   const PDFLib = await getAsset('PDFLib');
-  const download = await getAsset('download');
+  const download = await getAsset('download2');
   const makeTextPDF = await getAsset('makeTextPDF');
   let pdfDoc;
   try {
     pdfDoc = await PDFLib.PDFDocument.load(await readAsArrayBuffer(pdfFile));
+
+   
   } catch (e) {
     console.log('Failed to load PDF.');
     throw e;
@@ -100,6 +102,8 @@ export async function save(pdfFile, objects, name) {
     // const pdfBytes = await pdfDoc.save('http://yukmarry.com/12.pdf');
     const pdfBytes = await pdfDoc.save();
     download(pdfBytes, name, 'application/pdf');
+
+    //  pdfDoc.download
   } catch (e) {
     console.log('Failed to save PDF.');
     throw e;
