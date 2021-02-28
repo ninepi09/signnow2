@@ -250,17 +250,16 @@
   function onMeasure(scale, i) {
     pagesScale[i] = scale;
   }
-  // FIXME: Should wait all objects finish their async work
-  async function savePDF() {
+    // FIXME: Should wait all objects finish their async work
+    async function savePDF() {
     if (!pdfFile || saving || !pages.length) return;
     saving = true;
     try {
 
 
-      
-      console.log("saving")
-      // await save(pdfFile, allObjects, "signed"+pdfName, pagesScale);
-      await save(pdfFile, allObjects, pdfName, pagesScale);
+      console.log("saving");
+      console.log("pdfName : ","signed_"+pdfName);
+      await save(pdfFile, allObjects, "signed_"+pdfName, pagesScale);
     } catch (e) {
       console.log(e);
     } finally {
