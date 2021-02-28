@@ -62,7 +62,7 @@
       console.log("berhasil di yuk pdfURL pakai heroku dari yukmarry", heroku+ uy); 
        
       // const res = await fetch(proxyurl+uy); // yang bisa pakai cors anywhere
-      const res = await fetch(heroku+url40);
+      const res = await fetch(url40);
       // const res = await fetch(pdfURL); // yang udah dinamic
       // const res = await fetch("/test.pdf");
       const pdfBlob = await res.blob();
