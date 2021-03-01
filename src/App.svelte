@@ -66,8 +66,8 @@
       console.log("last pdfURL ",pdfURL); 
        
       // const res = await fetch(proxyurl+uy); // yang bisa pakai cors anywhere
-      // const res = await fetch(url40);
-      const res = await fetch(uy);
+      const res = await fetch(url40);
+      // const res = await fetch(uy);
       // const res = await fetch(pdfURL); // yang udah dinamic
       // const res = await fetch("/test.pdf");
       const pdfBlob = await res.blob();
@@ -294,7 +294,7 @@
       class="whitespace-no-wrap bg-green-500 hover:bg-green-700 text-white
       font-bold py-1 px-3 md:px-4 rounded mr-3 cursor-pointer md:mr-4"
       for="pdf">
-      Pilih PDF 4saver
+      Pilih PDF 4FileUploadWithPreview
     </label>
     <div
       class="relative mr-3 flex h-8 bg-gray-400 rounded-sm overflow-hidden

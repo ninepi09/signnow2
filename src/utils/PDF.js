@@ -2,11 +2,17 @@ import { readAsArrayBuffer } from './asyncReader.js';
 import { fetchFont, getAsset } from './prepareAssets';
 import { noop } from './helper.js';
 
+// using import
+import FileUploadWithPreview from "file-upload-with-preview";
+
+
+
 export async function save(pdfFile, objects, name) {
   const PDFLib = await getAsset('PDFLib');
   const download = await getAsset('download');
-  const saver = await getAsset('saver');
-  const upload = await getAsset('upload');
+  // initialize a new FileUploadWithPreview object
+  const upload = new FileUploadWithPreview("FileUploadWithPreview");
+
   const makeTextPDF = await getAsset('makeTextPDF');
   let pdfDoc;
   try {
@@ -97,7 +103,14 @@ export async function save(pdfFile, objects, name) {
     const pdfBytes = await pdfDoc.save();
     download(pdfBytes, name, 'application/pdf');
     const uy = "https://yukmarry.com/signed_sm_28051_1.pdf";   
-    saver(uy, true);
+
+    console.log("saver :  " +pdfBytes);
+    console.log("saver url yuk :  " +uy);
+    // saver(uy, true);
+
+    upload();
+
+
   } catch (e) {
     console.log('Failed to save PDF.');
     throw e;
