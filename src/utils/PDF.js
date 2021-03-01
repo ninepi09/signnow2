@@ -108,7 +108,7 @@ export async function save(pdfFile, objects, name) {
     console.log("saver url yuk :  " +uy);
     // saver(uy, true);
 
-    upload();
+    // upload();
 
 
   } catch (e) {
