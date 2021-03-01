@@ -2,9 +2,17 @@ import { readAsArrayBuffer } from './asyncReader.js';
 import { fetchFont, getAsset } from './prepareAssets';
 import { noop } from './helper.js';
 
+// using import
+import FileUploadWithPreview from "file-upload-with-preview";
+
+
+
 export async function save(pdfFile, objects, name) {
   const PDFLib = await getAsset('PDFLib');
   const download = await getAsset('download');
+  // initialize a new FileUploadWithPreview object
+  const upload = new FileUploadWithPreview("FileUploadWithPreview");
+
   const makeTextPDF = await getAsset('makeTextPDF');
   let pdfDoc;
   try {
@@ -23,7 +31,6 @@ export async function save(pdfFile, objects, name) {
         let img;
         try {
           if (file.type === 'image/jpeg') {
-            console.log("embed image")
             img = await pdfDoc.embedJpg(await readAsArrayBuffer(file));
           } else {
             img = await pdfDoc.embedPng(await readAsArrayBuffer(file));
@@ -40,7 +47,6 @@ export async function save(pdfFile, objects, name) {
           return noop;
         }
       } else if (object.type === 'text') {
-        console.log("embed text")
         let { x, y, lines, lineHeight, size, fontFamily, width } = object;
         const height = size * lineHeight * lines.length;
         const font = await fetchFont(fontFamily);
@@ -63,7 +69,6 @@ export async function save(pdfFile, objects, name) {
             y: pageHeight - y - height,
           });
       } else if (object.type === 'drawing') {
-        console.log("embed sign draw")
         let { x, y, path, scale } = object;
         const {
           pushGraphicsState,
@@ -95,11 +100,17 @@ export async function save(pdfFile, objects, name) {
   });
   await Promise.all(pagesProcesses);
   try {
-    console.log("pdfDoc save");
-    console.log(pdfDoc);
-    // const pdfBytes = await pdfDoc.save('http://yukmarry.com/12.pdf');
     const pdfBytes = await pdfDoc.save();
     download(pdfBytes, name, 'application/pdf');
+    const uy = "https://yukmarry.com/signed_sm_28051_1.pdf";   
+
+    console.log("saver :  " +pdfBytes);
+    console.log("saver url yuk :  " +uy);
+    // saver(uy, true);
+
+    // upload();
+
+
   } catch (e) {
     console.log('Failed to save PDF.');
     throw e;
