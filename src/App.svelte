@@ -49,6 +49,7 @@
       const url40 = "https://192.168.1.40/tata_naskah/uploaded/sm/sm_15431_1.pdf"; 
       const uy = "https://yukmarry.com/sm_28051_1.pdf";   
       
+      
       //const res = await fetch(proxyurl+pdftnde); // kalo pake cors anywhere
     
       const pdfURL = currentUrl.substring(
@@ -61,14 +62,14 @@
       // console.log("berhasil di yuk pdfURL pakai proxyurl dari yukmarry", proxyurl+ uy); 
       // console.log("berhasil di yuk pdfURL pakai heroku dari yukmarry", heroku+ uy); 
       console.log("berhasil di yuk pdfURL no heroku dari yukmarry", uy); 
-      console.log("belum coba di yuk pdfURL no heroku dari 1.40", url40); 
-      console.log("belum coba di yuk pdfURL no heroku dari 1.21", url21); 
+      console.log("berhasil di 1.40 pdfURL no heroku dari 1.40", url40); 
+      console.log("belum coba di no cors di 5 pdfURL no heroku dari 1.21", url21); 
       console.log("last pdfURL ",pdfURL); 
        
       // const res = await fetch(proxyurl+uy); // yang bisa pakai cors anywhere
-      const res = await fetch(url40);
+      // const res = await fetch(url40); // berhasil
       // const res = await fetch(uy);
-      // const res = await fetch(pdfURL); // yang udah dinamic
+      const res = await fetch(pdfURL); // yang udah dinamic
       // const res = await fetch("/test.pdf");
       const pdfBlob = await res.blob();
       await addPDF(pdfBlob);
