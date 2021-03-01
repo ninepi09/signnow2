@@ -64,7 +64,7 @@
       console.log("berhasil di yuk pdfURL no heroku dari yukmarry", uy); 
       console.log("berhasil di 1.40 pdfURL no heroku dari 1.40", url40); 
       console.log("belum coba di no cors di 5 pdfURL no heroku dari 1.21", url21); 
-      console.log("last pdfURL ",pdfURL); 
+      console.log("berhasil last pdfURL ",pdfURL); 
        
       // const res = await fetch(proxyurl+uy); // yang bisa pakai cors anywhere
       // const res = await fetch(url40); // berhasil
