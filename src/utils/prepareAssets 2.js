@@ -11,14 +11,6 @@ const scripts = [
     name: 'download',
     src: 'https://unpkg.com/downloadjs@1.4.7',
   },
-  {
-    name: 'upload',
-    src: 'https://unpkg.com/browse/file-upload@0.0.0/app.js',
-  },
-  {
-      name:'FileUploadWithPreview',
-      src:'https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.js',
-  },
   { name: 'makeTextPDF', src: '/makeTextPDF.js' },
 ];
 
